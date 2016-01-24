@@ -31,22 +31,8 @@ def home(request):
 
 
 
-	return render(request, "example_fluid.html", context)
+	return render(request, "home.html", context)
 
-
-# def contact(request):
-# 	form = ContactForm(request.POST or None)
-# 	if form.is_valid():
-# 		email = form.cleaned_data.get("email")
-# 		message = form.cleaned_data.get("message")
-# 		full_name = form.cleaned_data.get("full_name")
-
-# 		print email, full_name, message
-# 	context = {
-# 				"form": form,
-# 	}
-
-# 	return render(request, "forms.html", context)
 
 def contact(request):
 	form = ContactForm(request.POST or None)

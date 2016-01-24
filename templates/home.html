@@ -3,22 +3,34 @@
 
 {% block head_title %} Welcome | {{ block.super }}{% endblock %}
 
+<style>
+{% block style %}
+
+
+
+{% endblock %}
+</style>
+
 {% block jumbotron_content%}
-<h1>Hello There</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+		<div class="row">
+			<div class="col-xs-6">
+			<h1>Try Django 1.8</h1>
+	        <p>This is a MVP landing page project. The goal is
+	        to help you launch your venture/startup as soon as possible using this. </p>
+	        <p>
+	          <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+	        </p>
+	        </div>
+	        <div class="col-sm-6" style="background-color:black; height:300px;"></div>
+        </div>
 
 {% endblock %}
 
 {% block content %}
 <div class="row">
-  <div class="col-md-3">
-		<h1> {{ title }} </h1>
+  <div class="col-sm-3 pull-right" style="background-color:grey;">
+		<p class="lead text-align-center"> {{ title }} </p>
 
-		{{ user }}
-		{{ request.user }}
 
 		<form method="POST" action="">{% csrf_token %}
 		{{ form | crispy }}
@@ -27,6 +39,16 @@
 			
 		</form>
 	</div>
+	<div class="col-sm-3">
+		<p class="lead text-align-center">Built with Django and Bootstrap.</p>
+	</div>	
+	<div class="col-sm-3">
+		<p class="lead text-align-center">Created for new Entrepreneurs.</p>
+	</div>	
+	<div class="col-sm-3">
+		<p class="lead text-align-center">Always Open Source.</p>
+	</div>
+
 </div>
 
 {% endblock %}
