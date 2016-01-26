@@ -12,7 +12,6 @@
 
 <p>Screenshots:</p>
 
-<img  src="screenshots/1Screenshot_v34.png" style="width: 50%; height: 50%">
-<img  src="screenshots/2Screenshot_v34.png" style="width: 50%; height: 50%">
+<img  src="screenshots/1Screenshot_v35.png" style="width: 50%; height: 50%">
 <img  src="screenshots/3Screenshot_v34.png" style="width: 50%; height: 50%">
 <img  src="screenshots/4Screenshot_v34.png" style="width: 50%; height: 50%">
