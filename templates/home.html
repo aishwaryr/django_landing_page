@@ -20,6 +20,7 @@
                 
           
 {% block jumbotron%}
+{% if not request.user.is_authenticated %}
 		<div class="jumbotron">
 		<div class="container">
 			<div class="row">
@@ -40,10 +41,17 @@
 	        </div>
         </div>
         </div>
-
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+<h1>You're logged in.</h1>
+<p>{{ request.user }} is logged in.</p>
+{{ queryset }}
+
+
+{% else %}
 <div class="row">
   <div class="col-sm-3 pull-right">
 		<p class="lead text-align-center"> {{ title }} </p>
@@ -57,13 +65,13 @@
 		</form>
 	</div>
 	<div class="col-sm-3">
-		<p class="lead text-align-center">Built with Django and Bootstrap</p>
+		<p class="lead text-align-center">Django and Bootstrap</p>
 		<img height="200" src="{% static 'img/django.jpg'%}" class="img-responsive" />
 		<img height="200" src="{% static 'img/bootstrap.png'%}" class="img-responsive" />
 		
 	</div>	
 	<div class="col-sm-3">
-		<p class="lead text-align-center">Created for new Entrepreneurs</p>
+		<p class="lead text-align-center">Created for Startups</p>
 		<!-- <i class="fa fa-bolt fa-5x"></i> -->
 		<img height="200" src="{% static 'img/startup.jpg'%}" class="img-responsive" />
 	</div>	
@@ -72,7 +80,7 @@
 		<br/>
 		<br/>
 		<span class="fa-stack fa-lg fa-5x">
-		<i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>
+		<i class="fa fa-circle-o-notch fa-stack-2x"></i>
 		<i class="fa fa-github fa-stack-1x"></i>
 			
 		</span>
@@ -81,5 +89,6 @@
 	</div>
 
 </div>
+{% endif %}
 
 {% endblock %}
