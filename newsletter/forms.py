@@ -28,6 +28,7 @@ class SignUpForm(forms.ModelForm):
 		# 		raise forms.ValidationError("Name cannot contain symbols.")
 		return full_name
 
+# This form doesn't use Models
 class ContactForm(forms.Form):
 	full_name = forms.CharField(required = False)
 	email = forms.CharField()
